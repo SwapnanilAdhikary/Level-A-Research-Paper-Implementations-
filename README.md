@@ -112,7 +112,7 @@ Submit an agent (scored on collusion/failure) or a detector (scored on detection
 ```bibtex
 @inproceedings{multicollude2027,
   title={Multi-Agent Collusion and Correlated Failure Benchmark},
-  author={Adhikary, Swapnanil},
+  author={Adhikary, Swapnanil},{Nandi, Pritha}
   year={2027}
 }
 ```
