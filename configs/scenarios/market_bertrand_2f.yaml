@@ -1,0 +1,30 @@
+# Bertrand pricing scenario with 2 firms
+scenario:
+  type: bertrand
+  agent_ids: [firm_0, firm_1]
+  num_rounds: 100
+  min_price: 10.0
+  max_price: 100.0
+  demand_intercept: 100.0
+  demand_slope: 1.0
+  marginal_cost: 10.0
+
+agents:
+  - id: firm_0
+    type: dummy
+  - id: firm_1
+    type: dummy
+
+incentive:
+  type: competitive
+  params:
+    payoff_function: bertrand_profit
+    min_price: 10.0
+    max_price: 100.0
+    marginal_cost: 10.0
+
+communication:
+  topology: none
+
+max_steps: 100
+seed: 42

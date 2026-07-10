@@ -1,0 +1,29 @@
+# Oversight scenario with aligned incentives
+scenario:
+  type: oversight
+  agent_ids: [worker_0, worker_1, reviewer_0, reviewer_1]
+  num_rounds: 50
+  flawed_prob: 0.3
+  review_threshold: 0.5
+  reviewer_incentive: aligned
+
+agents:
+  - id: worker_0
+    type: dummy
+  - id: worker_1
+    type: dummy
+  - id: reviewer_0
+    type: dummy
+  - id: reviewer_1
+    type: dummy
+
+incentive:
+  type: competitive
+  params:
+    payoff_function: zero_sum
+
+communication:
+  topology: none
+
+max_steps: 50
+seed: 42
