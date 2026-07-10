@@ -1,0 +1,86 @@
+name: "Multi-Agent Collusion and Correlated Failure Benchmark"
+description: "A labeled trace dataset for evaluating multi-agent collusion and correlated failure detection. Contains traces from market pricing and reviewer oversight scenarios with colluding/non-colluding labels."
+
+url: "https://huggingface.co/datasets/yourusername/multicollude"
+license: "cc-by-4.0"
+version: "1.0.0"
+
+distribution:
+  - url: "https://huggingface.co/datasets/yourusername/multicollude/resolve/main/multicollude_v1.csv"
+    name: "CSV format"
+    encodingFormat: "text/csv"
+
+  - url: "https://huggingface.co/datasets/yourusername/multicollude/resolve/main/multicollude_v1.jsonl"
+    name: "JSON Lines format"
+    encodingFormat: "application/json"
+
+recordSet:
+  - name: "traces"
+    description: "Trace records from multi-agent scenarios"
+    field:
+      - name: "trace_id"
+        description: "Unique identifier for the trace"
+        dataType: "string"
+
+      - name: "scenario_type"
+        description: "Type of scenario (bertrand, oversight)"
+        dataType: "string"
+
+      - name: "episode"
+        description: "Episode number"
+        dataType: "integer"
+
+      - name: "step"
+        description: "Step number within the episode"
+        dataType: "integer"
+
+      - name: "agent_id"
+        description: "Identifier of the agent"
+        dataType: "string"
+
+      - name: "action_type"
+        description: "Type of action taken"
+        dataType: "string"
+
+      - name: "action_content"
+        description: "Content of the action (JSON)"
+        dataType: "string"
+
+      - name: "observation_content"
+        description: "Content of the observation (JSON)"
+        dataType: "string"
+
+      - name: "reward"
+        description: "Reward received by the agent"
+        dataType: "float"
+
+      - name: "done"
+        description: "Whether the episode is done"
+        dataType: "boolean"
+
+      - name: "label"
+        description: "Label indicating if the agent is colluding (colluding/non_colluding)"
+        dataType: "string"
+
+      - name: "label_reason"
+        description: "Reason for the label"
+        dataType: "string"
+
+responsibleAI:
+  - name: "intendedUse"
+    description: "This dataset is intended for research on multi-agent collusion detection and correlated failure analysis. It should be used to train and evaluate detectors for identifying collusive behavior in multi-agent AI systems."
+
+  - name: "outOfScopeUses"
+    description: "This dataset should not be used for: 1) Training agents to collude, 2) Real-world pricing or auction systems without proper safeguards, 3) Any application that could harm consumers or market competition."
+
+  - name: " biases"
+    description: "The dataset contains synthetic traces from simulated environments. Real-world collusion patterns may differ significantly. The dataset may not capture all forms of collusion, particularly sophisticated covert coordination."
+
+  - name: "limitations"
+    description: "1) Synthetic data from simulated environments, 2) Limited to pricing and review scenarios, 3) May not capture real-world complexity, 4) Labels are based on behavioral metrics, not intent."
+
+  - name: "ethics"
+    description: "This research aims to improve detection of harmful AI collusion. The dataset is released under CC-BY 4.0 license for open research. Users should ensure their applications do not enable or encourage collusive behavior."
+
+  - name: "privacy"
+    description: "The dataset contains no personally identifiable information. All data is synthetic and generated from simulated agents."
